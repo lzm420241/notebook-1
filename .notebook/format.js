@@ -62,7 +62,11 @@ class Format{
             }
             match = r.exec(markdown);
         }
-        
+
+        if(hx.length == 0){
+            return markdown.replace(toc_pattern, '');
+        }
+
         let topLevel = _.minBy(hx, (h) => h.level).level;
 
         let toc = '## 目录：\n\n'
@@ -71,6 +75,8 @@ class Format{
             let space = _.repeat(' ', (h.level - topLevel) * 2);
             toc +=  `${space}- [${h.text}](#${slug})\n`
         }
+
+        toc += '\n---\n'
 
         markdown = markdown.replace(toc_pattern, toc);
         return markdown
@@ -112,13 +118,7 @@ let finder = find(path.normalize(path.join(__dirname, '..')))
 
 finder.on('directory', function (dir, stat, stop) {
     var base = path.basename(dir);
-    if (base in ['.git', 'node_modules', 'images']){
+    if (base == '.git' || base == 'node_modules' || base == 'images'){
         stop()
-    }
-});
-
-finder.on('file', function (file, stat) {
-    if(path.parse(file).ext == '.md'){
-        new Format(file)
     }
 });
