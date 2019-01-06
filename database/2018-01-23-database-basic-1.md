@@ -208,7 +208,7 @@ SQL 区分三类关系：
 
 #### BCNF
 
-关系 R 属于 BCNF 当且仅当：如果 R 中非平凡 FD $A_1 A_2 ... A_n \rightarrow B_1 B_2 ... B_m$ 成立，则 {$A_1 A_2 ... A_n$} 是关系 R 的超键。也就是说，关系 R 中有一个超键，这个超键能够确定其他所有属性。
+关系 R 属于 BCNF 当且仅当：如果 R 中非平凡 FD <img src="https://latex.codecogs.com/gif.latex?A_1A_2...A_n%5CrightarrowB_1B_2...B_m%24%E6%88%90%E7%AB%8B%EF%BC%8C%E5%88%99%7B%24A_1A_2...A_n" class="tex" alt="A_1A_2...A_n\rightarrowB_1B_2...B_m$成立，则{$A_1A_2...A_n" />} 是关系 R 的超键。也就是说，关系 R 中有一个超键，这个超键能够确定其他所有属性。
 
 <div align="center"><img src="../images/18-3-22/29262878.jpg"  /></div>
 

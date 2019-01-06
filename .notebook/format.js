@@ -3,9 +3,9 @@ let _ = require('lodash')
 let qs = require('querystring')
 var find = require('findit')
 var path = require('path');
-let log = console.log
 
-class Format{
+
+class Formater{
     constructor(file){
         this.seen_slug = {}
     
@@ -19,15 +19,32 @@ class Format{
     format(markdown){
         markdown = this.format_image(markdown);
         markdown = this.format_toc(markdown);
+        markdown = this.render_math_as_img(markdown);
         return markdown;
     }
 
+    get_title(markdown){
+        let title = '';
+
+        let r = /^(#{1,6})\s*?([\w\W]+?)^/gm;
+        let match = r.exec(markdown)
+        if(match){
+            title = match[2].trim()
+        }
+
+        return title;
+    }
+
     slug(value) {
+        console.log(value)
+        '什么是 fps，60fps 意味着什么？'
+
         let slug = value
-          .toLowerCase()
-          .trim()
-          .replace(/[\u2000-\u206F\u2E00-\u2E7F\\'!"#$%&()*+,./:;<=>?@[\]^`{|}~]/g, '')
-          .replace(/\s/g, '-');
+            .toLowerCase()
+            .trim()
+            .split(' ').join('-')
+            .split(/[\|\$&`~=\\\/@+*!?\(\{\[\]\}\)<>=.,;:'"^。？！，、；：“”【】（）〔〕［］﹃﹄“”‘’﹁﹂—…－～《》〈〉「」]/g).join('')
+            .replace(/\t/, '--');
       
         if (this.seen_slug.hasOwnProperty(slug)) {
           var original_slug = slug;
@@ -111,14 +128,45 @@ class Format{
         });
         return markdown;
     }
+
+
+    render_math_as_img(markdown){
+        let r = /(\${2,3})(.+)\1/gm;
+        markdown = markdown.replace(r, function(match, wrap, tex){
+            tex = tex.replace(/\s/g, '');
+            let tex_encode = encodeURIComponent(tex);
+
+            let url = `https://latex.codecogs.com/gif.latex?${tex_encode}`;
+            if(wrap == '$$'){
+                return `<img src="${url}" class="tex" alt="${tex}" />`
+            }else{
+                return `<div align="center"><img src="${url}" class="tex" alt="${tex}"/></div>`
+            }
+        });
+        return markdown
+    }
 }
 
 
-let finder = find(path.normalize(path.join(__dirname, '..')))
+let filepath = ''
+
+if(process.argv.length == 2){
+    filepath = '.'
+}else{
+    filepath = process.argv[2]
+}
+
+let finder = find(path.normalize(path.join(__dirname, '..', filepath)))
 
 finder.on('directory', function (dir, stat, stop) {
     var base = path.basename(dir);
     if (base == '.git' || base == 'node_modules' || base == 'images'){
         stop()
+    }
+});
+
+finder.on('file', function (file, stat) {
+    if(path.parse(file).ext == '.md'){
+        new Formater(file);
     }
 });

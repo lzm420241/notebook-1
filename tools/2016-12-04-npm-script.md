@@ -126,6 +126,7 @@ npm test -- --reporter spec
   }
 }
 ```
+
 通过 `process.env.npm_package_repository_type` 可以拿到值 `"git"`。
 
 另外可以通过 `process.env.npm_config_xxx` 来拿到 npm config 中的值。比如通过 `process.env.npm_config_user_email` 可以拿到 `user.email` 的值。
