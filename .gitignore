@@ -1,7 +1,6 @@
 _site/*
 node_modules/*
 .sass-cache
-typings
 .idea
 .vs
 .jekyll-metadata
