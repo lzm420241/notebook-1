@@ -10,7 +10,7 @@
 
 其主界面如下：
 
-![](../images/18-12-6/jupyter-lab.jpg)
+<div align="center"><img src="../images/18-12-6/jupyter-lab.jpg"  /></div>
 
 
 jupyter notebook 的文档在 [JupyterLab Documentation](https://jupyterlab.readthedocs.io/en/stable/)。

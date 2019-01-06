@@ -74,7 +74,7 @@ background-image: radial-gradient(circle closest-side at 20% 30%, #fff 0%, #999 
 }
 ```
 
-![作业本纸张效果](https://cloud.githubusercontent.com/assets/7794103/17829500/428a3fb2-66e3-11e6-9a65-a29c0b70d414.png)
+<div align="center"><img src="https://cloud.githubusercontent.com/assets/7794103/17829500/428a3fb2-66e3-11e6-9a65-a29c0b70d414.png" 作业本纸张效果="" /></div>
 
 
 ### 重复径向渐变
@@ -92,14 +92,14 @@ background-image: radial-gradient(circle closest-side at 20% 30%, #fff 0%, #999 
 ```
 
 
-![波纹效果](https://cloud.githubusercontent.com/assets/7794103/17829534/21cc1c18-66e4-11e6-8c9b-297c6439b5a4.png)
+<div align="center"><img src="https://cloud.githubusercontent.com/assets/7794103/17829534/21cc1c18-66e4-11e6-8c9b-297c6439b5a4.png" 波纹效果="" /></div>
 
 
 ### 多个渐变叠加
 
 是否可以在一个背景图上应用多个渐变呢？是可以的，例如下面的例子，利用渐变做出来了个玩意儿（它不是五环）。
 
-![image](https://cloud.githubusercontent.com/assets/7794103/17829625/710fd9ce-66e7-11e6-8113-376cc2822115.png)
+<div align="center"><img src="https://cloud.githubusercontent.com/assets/7794103/17829625/710fd9ce-66e7-11e6-8113-376cc2822115.png" image="" /></div>
 
 代码：
 

@@ -532,7 +532,7 @@ CREATE ASSERTION count_samll_than_100 CHECK
 
 各种约束的比较如下：
 
-![](../images/18-3-23/53337733.jpg)
+<div align="center"><img src="../images/18-3-23/53337733.jpg"  /></div>
 
 
 ## 虚拟视图

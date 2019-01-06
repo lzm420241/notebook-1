@@ -20,7 +20,7 @@ transform-origin: 50% 50%;
 
 同样是顺时针旋转 90 度，看下面图你就明白 `transform-origin` 了。
 
-![transform-origin](https://cloud.githubusercontent.com/assets/7794103/17830394/a4c79314-66fc-11e6-8949-817316812e64.png)
+<div align="center"><img src="https://cloud.githubusercontent.com/assets/7794103/17830394/a4c79314-66fc-11e6-8949-817316812e64.png" alt="transform-origin"  /></div>
 
 ## transform-style
 
@@ -29,13 +29,13 @@ transform-origin: 50% 50%;
 - preserve-3d：指定元素在 3D 空间展示
 - flat：元素会在 2D 空间展示，本该在 3D 空间展示的内容会投影到 2D 平面上
 
-![transform-style](https://cloud.githubusercontent.com/assets/7794103/17830570/db9e5fb2-6701-11e6-9b15-6446889a4dac.png)
+<div align="center"><img src="https://cloud.githubusercontent.com/assets/7794103/17830570/db9e5fb2-6701-11e6-9b15-6446889a4dac.png" alt="transform-style"  /></div>
 
 ## perspective
 
 该属性用于设置观察者距离元素的位置。下图中分别设置 perspective 为 8000px 和 1000px ，两幅图就像是观察者站在 8000px 和 1000px 远处看到的场景一样。
 
-![image](https://cloud.githubusercontent.com/assets/7794103/17830612/fa38fe68-6702-11e6-8590-ac2a12a60f2c.png)
+<div align="center"><img src="https://cloud.githubusercontent.com/assets/7794103/17830612/fa38fe68-6702-11e6-8590-ac2a12a60f2c.png" /></div>
 
 该属性设置在 3D 形变元素的父容器上，该父容器就像是一个一个舞台，而其中的子元素是舞台上的演员，这个 perspective 就决定了观看者距离舞台的距离。如果很近会看不到整体，如果很远，则看不到元素之间的位置关系了。
 
@@ -60,13 +60,13 @@ perspective-origin: left top;
 
 当元素经过旋转，其背面呈现在视图中的时候，该属性用来决定元素的背面是否可见。该属性有两个可选值：`visible` 和 `hidden`。
 
-![backface-visibility](https://cloud.githubusercontent.com/assets/7794103/17830710/6927f524-6706-11e6-868f-f61125a330f3.png)
+<div align="center"><img src="https://cloud.githubusercontent.com/assets/7794103/17830710/6927f524-6706-11e6-868f-f61125a330f3.png" alt="backface-visibility"  /></div>
 
 ## transform-function
 
 3D 变换的 X,Y,Z 轴如同所示：
 
-![](../images/17-4-21/58142497-file_1492770011210_12ce8.png)
+<div align="center"><img src="../images/17-4-21/58142497-file_1492770011210_12ce8.png" /></div>
 
 `transform` 可取值很多，参数如下：
 
