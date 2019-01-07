@@ -36,8 +36,6 @@ class Formater{
     }
 
     slug(value) {
-        console.log(value)
-        '什么是 fps，60fps 意味着什么？'
 
         let slug = value
             .toLowerCase()
@@ -50,8 +48,8 @@ class Formater{
           var original_slug = slug;
           do {
             this.seen_slug[original_slug]++;
-            slug = original_slug + '-' + this.seen[original_slug];
-          } while (this.seen.hasOwnProperty(slug));
+            slug = original_slug + '-' + this.seen_slug[original_slug];
+          } while (this.seen_slug.hasOwnProperty(slug));
         }
         this.seen_slug[slug] = 0;
       
@@ -88,8 +86,13 @@ class Formater{
 
         let toc = '## 目录：\n\n'
         for(let h of hx){
+            let diff = h.level - topLevel;
+            if (diff > 1){
+                continue;
+            }
+
             let slug = this.slug(h.text);
-            let space = _.repeat(' ', (h.level - topLevel) * 2);
+            let space = _.repeat(' ', (diff) * 2);
             toc +=  `${space}- [${h.text}](#${slug})\n`
         }
 
