@@ -7,6 +7,8 @@ var path = require('path');
 
 class Formater{
     constructor(file){
+        this.file = file;
+
         this.seen_slug = {}
     
         let markdown = fs.readFileSync(file, {encoding: 'utf-8'})
@@ -20,7 +22,18 @@ class Formater{
         markdown = this.format_image(markdown);
         markdown = this.format_toc(markdown);
         markdown = this.render_math_as_img(markdown);
+        markdown = this.format_web_link(markdown);
         return markdown;
+    }
+
+    format_web_link(markdown){
+        let relative_path = path.relative(__dirname + '/..', this.file)
+        relative_path = relative_path.replace(/\\/g, '/');
+        let pattern = '[__WEB__]';
+        return markdown.replace(pattern, function(){
+
+            return `本文部分内容在 github 上无法正常显示，[可点击此处在外部网页中浏览](https://wy-ei.github.io/md/view/?url=https://raw.githubusercontent.com/wy-ei/notebook/master/${relative_path})。`
+        })
     }
 
     get_title(markdown){
@@ -84,7 +97,7 @@ class Formater{
 
         let topLevel = _.minBy(hx, (h) => h.level).level;
 
-        let toc = '## 目录：\n\n'
+        let toc = '## 目录：\n\n---\n\n'
         for(let h of hx){
             let diff = h.level - topLevel;
             if (diff > 1){

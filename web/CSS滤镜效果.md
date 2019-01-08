@@ -1,5 +1,7 @@
 ## CSS filter - 滤镜效果
 
+本文部分内容在 github 上无法正常显示，[可点击此处在外部网页中浏览](https://wy-ei.github.io/md/view/?url=https://raw.githubusercontent.com/wy-ei/notebook/master/web/CSS滤镜效果.md)。
+
 ---
 
 ## 目录：
@@ -199,7 +201,7 @@ filter: sepia(50%) blur(5px);
 <div class="filter-rect" data-func="sepia(%d%) blur(5px)" data-min="0" data-max="100" data-step="1" data-value="50"></div>
 
 <script>
-window.addEventListener('load', function(){
+(function(){
     var rects = [].slice.call(document.querySelectorAll('.filter-rect'), 0);
     rects.forEach(function(rect) {
         var func = rect.dataset.func,
@@ -207,7 +209,7 @@ window.addEventListener('load', function(){
             max = rect.dataset.max,
             step = rect.dataset.step;
         var img = document.createElement('img');
-        img.src = '../images/16-9-3/75491219.jpg';
+        img.src = 'https://raw.githubusercontent.com/wy-ei/notebook/master/images/16-9-3/75491219.jpg';
         rect.appendChild(img);
         var input = document.createElement('input');
         input.type = 'range';
@@ -226,5 +228,5 @@ window.addEventListener('load', function(){
         };
         rect.appendChild(input);
     });
-});
+})();
 </script>
