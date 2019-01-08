@@ -245,7 +245,7 @@
   text-align: center;
   border: 30px solid hsla(0, 0%, 100%, 0.4);
   background: linear-gradient(hsla(0, 0%, 100%, 0.8),hsla(0, 0%, 100%, 0.8)) padding-box,
-      url(../images/16-8-28/59834519.jpg) border-box 0 / cover;
+      url(https://raw.githubusercontent.com/wy-ei/notebook/master/images/16-8-28/59834519.jpg) border-box 0 / cover;
 }
 .ant{
   padding: 1px;
@@ -1369,71 +1369,71 @@ text-shadow: 0 1px hsl(0,0%,85%),
 ## CSS 揭秘 - 读书笔记（其五）
 
 <style>
-##ex-checkbox[type=checkbox]{
-    display: none;
-}
-##ex-checkbox[type=checkbox]+label{
-    display: inline-block;
-    position: relative;
-    width:80px;
-    height: 20px;
-    border-radius: 3px;
-    border: 1px solid #aaa;
-    background: #aaa;
-}
-##ex-checkbox[type=checkbox]+label::after{
-    content: '';
-    position: absolute;
-    left: 0;
-    display: inline-block;
-    width:50%;
-    height: 100%;
-    border-radius: 2px;
-    background: #fff;
-}
-##ex-checkbox[type=checkbox]:checked+label{
-    background: #39ca39;
-    border: 1px solid #39ca39;
-}
-##ex-checkbox[type=checkbox]:checked+label::after{
-    left: 50%;
-}
-##ex-item-count div,
-##ex-item-count-range div,
-##ex-items-count-even-or-odd div{
-    display: inline-block;
-    width: 30px;
-    height: 30px;
-    border-radius: 4px;
-    margin: 10px;
-}
-##ex-item-count div:only-child{
-    background: red;
-}
-##ex-item-count div:first-child:nth-last-child(2),
-##ex-item-count div:first-child:nth-last-child(2) ~ div{
-    background: yellow;
-}
-##ex-item-count div:first-child:nth-last-child(3),
-##ex-item-count div:first-child:nth-last-child(3) ~ div{
-    background: green;
-}
-##ex-item-count-range div:first-child:nth-last-child(-n+4),
-##ex-item-count-range div:first-child:nth-last-child(-n+4) ~ div{
-    background: yellow;
-}
-##ex-item-count-range div:first-child:nth-last-child(n+4),
-##ex-item-count-range div:first-child:nth-last-child(n+4) ~ div{
-    background: black;
-}
-##ex-items-count-even-or-odd div:first-child:nth-last-child(2n+1),
-##ex-items-count-even-or-odd div:first-child:nth-last-child(2n+1) ~ div{
-    background: black;
-}
-##ex-items-count-even-or-odd div:first-child:nth-last-child(2n),
-##ex-items-count-even-or-odd div:first-child:nth-last-child(2n) ~ div{
-    background: yellow;
-}
+    #ex-checkbox[type=checkbox]{
+        display: none;
+    }
+    #ex-checkbox[type=checkbox]+label{
+        display: inline-block;
+        position: relative;
+        width:80px;
+        height: 20px;
+        border-radius: 3px;
+        border: 1px solid #aaa;
+        background: #aaa;
+    }
+    #ex-checkbox[type=checkbox]+label::after{
+        content: '';
+        position: absolute;
+        left: 0;
+        display: inline-block;
+        width:50%;
+        height: 100%;
+        border-radius: 2px;
+        background: #fff;
+    }
+    #ex-checkbox[type=checkbox]:checked+label{
+        background: #39ca39;
+        border: 1px solid #39ca39;
+    }
+    #ex-checkbox[type=checkbox]:checked+label::after{
+        left: 50%;
+    }
+    #ex-item-count div,
+    #ex-item-count-range div,
+    #ex-items-count-even-or-odd div{
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        border-radius: 4px;
+        margin: 10px;
+    }
+    #ex-item-count div:only-child{
+        background: red;
+    }
+    #ex-item-count div:first-child:nth-last-child(2),
+    #ex-item-count div:first-child:nth-last-child(2) ~ div{
+        background: yellow;
+    }
+    #ex-item-count div:first-child:nth-last-child(3),
+    #ex-item-count div:first-child:nth-last-child(3) ~ div{
+        background: green;
+    }
+    #ex-item-count-range div:first-child:nth-last-child(-n+4),
+    #ex-item-count-range div:first-child:nth-last-child(-n+4) ~ div{
+        background: yellow;
+    }
+    #ex-item-count-range div:first-child:nth-last-child(n+4),
+    #ex-item-count-range div:first-child:nth-last-child(n+4) ~ div{
+        background: black;
+    }
+    #ex-items-count-even-or-odd div:first-child:nth-last-child(2n+1),
+    #ex-items-count-even-or-odd div:first-child:nth-last-child(2n+1) ~ div{
+        background: black;
+    }
+    #ex-items-count-even-or-odd div:first-child:nth-last-child(2n),
+    #ex-items-count-even-or-odd div:first-child:nth-last-child(2n) ~ div{
+        background: yellow;
+    }
 </style>
 
 
