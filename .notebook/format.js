@@ -97,7 +97,7 @@ class Formater{
 
         let topLevel = _.minBy(hx, (h) => h.level).level;
 
-        let toc = '## 目录：\n\n---\n\n'
+        let toc = '## 目录：\n\n'
         for(let h of hx){
             let diff = h.level - topLevel;
             if (diff > 1){

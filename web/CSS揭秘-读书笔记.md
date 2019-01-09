@@ -1,10 +1,8 @@
-# CSS 揭秘-读书笔记
+## CSS 揭秘-读书笔记
 
 本文部分内容在 github 上无法正常显示，[可点击此处在外部网页中浏览](https://wy-ei.github.io/md/view/?url=https://raw.githubusercontent.com/wy-ei/notebook/master/web/CSS揭秘-读书笔记.md)。
 
 ## 目录：
-
----
 
 - [CSS 揭秘 - 读书笔记（其一）](#css-揭秘---读书笔记其一)
   - [半透明边框](#半透明边框)
@@ -833,6 +831,7 @@ transform: scaleY(2) perspective(50px) rotateX(45deg);
 简单饼图，就像下面这样：
 
 <div class="pie" style="animation-delay: -20s;"></div>
+
 <style>
 .pie{
   width: 150px;
@@ -850,20 +849,17 @@ transform: scaleY(2) perspective(50px) rotateX(45deg);
   margin-left: 50%;
   border-radius: 0 100% 100% 0% / 0 50% 50% 0;
   transform-origin: left;
-  animation: spin 50s linear infinite,
-    bg 100s step-end infinite;
+  animation: spin 50s linear infinite, bg 100s step-end infinite;
   animation-play-state: paused;
   animation-delay: inherit;
-
 }
-
 @keyframes spin{
   to {
     transform: rotate(.5turn);
   }
 }
 @keyframes bg{
-  50%{
+  50% {
     background: #655;
   }
 }
@@ -955,7 +951,7 @@ transform: scaleY(2) perspective(50px) rotateX(45deg);
     background-color: #eee;
 }
 .filter{
-    background: url(../images/16-8-29/3537077.jpg) 0 0 / 100% 100%;
+    background: url(https://raw.githubusercontent.com/wy-ei/notebook/master/images/16-8-29/3537077.jpg) 0 0 / 100% 100%;
     transition: .5s;
     -webkit-filter: sepia(1) saturate(4) hue-rotate(295deg);
     filter: sepia(1) saturate(4) hue-rotate(295deg);
@@ -970,7 +966,7 @@ transform: scaleY(2) perspective(50px) rotateX(45deg);
     height: 100%;
 }
 .background-blend-mode{
-    background: hsl(335, 100%, 50%) url(../images/16-8-29/3537077.jpg) 0 0 / 100% 100%;
+    background: hsl(335, 100%, 50%) url(https://raw.githubusercontent.com/wy-ei/notebook/master/images/16-8-29/3537077.jpg) 0 0 / 100% 100%;
     background-blend-mode: luminosity;
 }
 .blur-background{
@@ -982,7 +978,7 @@ transform: scaleY(2) perspective(50px) rotateX(45deg);
 }
 .blur-background>img{
     z-index: -1;
-    background: url(../images/maxresdefault.jpg) 0 / cover;
+    background: url(https://raw.githubusercontent.com/wy-ei/notebook/master/images/16-8-29/3537077.jpg) 0 / cover;
     -webkit-filter: blur(5px);
     filter: blur(5px);
 }
@@ -1078,7 +1074,7 @@ filter 属性目前只有新版本的浏览器支持，且需要添加浏览器�
 
 #### 基于滤镜的方案
 
-使用 CSS 中的 filter 属性，可以给元素添加数十种滤镜效果，我之前写了一篇专门介绍 filter 的文章，可以参考 [CSS filter - 滤镜效果]({{site.url}}/css-filter) 来了解 filter 的功能和使用方法。
+使用 CSS 中的 filter 属性，可以给元素添加数十种滤镜效果。
 
 比如这里，使用这段 CSS 给周董应用了这样的效果：
 
@@ -1099,7 +1095,7 @@ filter: sepia(1) saturate(4) hue-rotate(295deg);
 
 使用 `mix-blend-mode` 的效果：
 
-<div class="mix-blend-mode rect"><img src="../images/16-8-29/3537077.jpg"></div>
+<div class="mix-blend-mode rect"><img src="https://raw.githubusercontent.com/wy-ei/notebook/master/images/16-8-29/3537077.jpg"></div>
 
 使用 `background-blend-mode` 的效果：
 
@@ -1112,13 +1108,13 @@ filter: sepia(1) saturate(4) hue-rotate(295deg);
 
 我们常常看到毛玻璃效果，比如在 macOS 中就非常常见，启动 launchpad 就能看到这种效果。在网易云音乐中显示歌词的哪儿也使用了这种效果。说这么多不如一个例子，就下面这样的。那么在 web 上该如何实现这样的效果呢。
 
-<div class="blur-background"><img src="../images/maxresdefault.jpg" alt=""><p>即刻出发</p></div>
+<div class="blur-background"><img src="https://raw.githubusercontent.com/wy-ei/notebook/master/images/16-8-29/3537077.jpg" alt=""><p>千里之外</p></div>
 
 这里 dom 结构是这样的：
 
 ```html
 <div class="main">
-    <p class="content">即刻出发</p>
+    <p class="content">千里之外</p>
 </div>
 ```
 
@@ -1136,7 +1132,7 @@ filter: sepia(1) saturate(4) hue-rotate(295deg);
     position: absolute;
     top: 0;right: 0;bottom: 0;left: 0;
     z-index: -1;
-    background: url(../images/maxresdefault.jpg) 0 / cover;
+    background: url(images/16-8-29/3537077.jpg) 0 / cover;
     -webkit-filter: blur(5px);
     filter: blur(5px);
 }
@@ -1155,7 +1151,7 @@ filter: sepia(1) saturate(4) hue-rotate(295deg);
 .ex-br span::after{
     content:"\A";
 }
-##ex-stripe{
+#ex-stripe{
     line-height: 1.5em;
     background: linear-gradient(rgba(210, 210, 210, 0.2) 50%, transparent 0);
     background-size: auto 3em;
