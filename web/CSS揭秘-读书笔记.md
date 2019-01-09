@@ -1,7 +1,46 @@
-# CSS 揭秘 - 读书笔记
+## CSS 揭秘-读书笔记
 
+本文部分内容在 github 上无法正常显示，[可点击此处在外部网页中浏览](https://wy-ei.github.io/md/view/?url=https://raw.githubusercontent.com/wy-ei/notebook/master/web/CSS揭秘-读书笔记.md)。
 
+## 目录：
 
+- [CSS 揭秘 - 读书笔记（其一）](#css-揭秘---读书笔记其一)
+  - [半透明边框](#半透明边框)
+  - [多重边框](#多重边框)
+  - [灵活的背景定位](#灵活的背景定位)
+  - [边框内圆角](#边框内圆角)
+  - [条纹背景](#条纹背景)
+  - [复杂的背景图案](#复杂的背景图案)
+  - [伪随机背景](#伪随机背景)
+  - [连续的图像边框](#连续的图像边框)
+- [CSS 揭秘 - 读书笔记（其二）](#css-揭秘---读书笔记其二)
+  - [自适应的椭圆](#自适应的椭圆)
+  - [平行四边形](#平行四边形)
+  - [菱形图片](#菱形图片)
+  - [切角效果](#切角效果)
+  - [梯形标签页](#梯形标签页)
+  - [简单饼图](#简单饼图)
+- [CSS 揭秘 - 读书笔记（其三）](#css-揭秘---读书笔记其三)
+  - [投影](#投影)
+  - [不规则投影](#不规则投影)
+  - [染色效果](#染色效果)
+  - [毛玻璃效果](#毛玻璃效果)
+- [CSS 揭秘 - 读书笔记（其四）](#css-揭秘---读书笔记其四)
+  - [连字符断行](#连字符断行)
+  - [插入换行](#插入换行)
+  - [文本行的斑马条纹](#文本行的斑马条纹)
+  - [调整 tab 的宽度](#调整-tab-的宽度)
+  - [自定义下划线](#自定义下划线)
+  - [现实中的文字效果](#现实中的文字效果)
+- [CSS 揭秘 - 读书笔记（其五）](#css-揭秘---读书笔记其五)
+  - [选用合适的鼠标光标](#选用合适的鼠标光标)
+  - [扩大可点击区域](#扩大可点击区域)
+  - [自定义复选框](#自定义复选框)
+  - [通过阴影来弱化背景](#通过阴影来弱化背景)
+  - [通过模糊来弱化背景](#通过模糊来弱化背景)
+  - [根据兄弟元素的数量来设置样式](#根据兄弟元素的数量来设置样式)
+
+---
 
 
 ## CSS 揭秘 - 读书笔记（其一）
@@ -204,7 +243,7 @@
   text-align: center;
   border: 30px solid hsla(0, 0%, 100%, 0.4);
   background: linear-gradient(hsla(0, 0%, 100%, 0.8),hsla(0, 0%, 100%, 0.8)) padding-box,
-      url(../images/16-8-28/59834519.jpg) border-box 0 / cover;
+      url(https://raw.githubusercontent.com/wy-ei/notebook/master/images/16-8-28/59834519.jpg) border-box 0 / cover;
 }
 .ant{
   padding: 1px;
@@ -792,6 +831,7 @@ transform: scaleY(2) perspective(50px) rotateX(45deg);
 简单饼图，就像下面这样：
 
 <div class="pie" style="animation-delay: -20s;"></div>
+
 <style>
 .pie{
   width: 150px;
@@ -809,20 +849,17 @@ transform: scaleY(2) perspective(50px) rotateX(45deg);
   margin-left: 50%;
   border-radius: 0 100% 100% 0% / 0 50% 50% 0;
   transform-origin: left;
-  animation: spin 50s linear infinite,
-    bg 100s step-end infinite;
+  animation: spin 50s linear infinite, bg 100s step-end infinite;
   animation-play-state: paused;
   animation-delay: inherit;
-
 }
-
 @keyframes spin{
   to {
     transform: rotate(.5turn);
   }
 }
 @keyframes bg{
-  50%{
+  50% {
     background: #655;
   }
 }
@@ -914,7 +951,7 @@ transform: scaleY(2) perspective(50px) rotateX(45deg);
     background-color: #eee;
 }
 .filter{
-    background: url(../images/16-8-29/3537077.jpg) 0 0 / 100% 100%;
+    background: url(https://raw.githubusercontent.com/wy-ei/notebook/master/images/16-8-29/3537077.jpg) 0 0 / 100% 100%;
     transition: .5s;
     -webkit-filter: sepia(1) saturate(4) hue-rotate(295deg);
     filter: sepia(1) saturate(4) hue-rotate(295deg);
@@ -929,7 +966,7 @@ transform: scaleY(2) perspective(50px) rotateX(45deg);
     height: 100%;
 }
 .background-blend-mode{
-    background: hsl(335, 100%, 50%) url(../images/16-8-29/3537077.jpg) 0 0 / 100% 100%;
+    background: hsl(335, 100%, 50%) url(https://raw.githubusercontent.com/wy-ei/notebook/master/images/16-8-29/3537077.jpg) 0 0 / 100% 100%;
     background-blend-mode: luminosity;
 }
 .blur-background{
@@ -941,7 +978,7 @@ transform: scaleY(2) perspective(50px) rotateX(45deg);
 }
 .blur-background>img{
     z-index: -1;
-    background: url(../images/maxresdefault.jpg) 0 / cover;
+    background: url(https://raw.githubusercontent.com/wy-ei/notebook/master/images/16-8-29/3537077.jpg) 0 / cover;
     -webkit-filter: blur(5px);
     filter: blur(5px);
 }
@@ -1037,7 +1074,7 @@ filter 属性目前只有新版本的浏览器支持，且需要添加浏览器�
 
 #### 基于滤镜的方案
 
-使用 CSS 中的 filter 属性，可以给元素添加数十种滤镜效果，我之前写了一篇专门介绍 filter 的文章，可以参考 [CSS filter - 滤镜效果]({{site.url}}/css-filter) 来了解 filter 的功能和使用方法。
+使用 CSS 中的 filter 属性，可以给元素添加数十种滤镜效果。
 
 比如这里，使用这段 CSS 给周董应用了这样的效果：
 
@@ -1058,7 +1095,7 @@ filter: sepia(1) saturate(4) hue-rotate(295deg);
 
 使用 `mix-blend-mode` 的效果：
 
-<div class="mix-blend-mode rect"><img src="../images/16-8-29/3537077.jpg"></div>
+<div class="mix-blend-mode rect"><img src="https://raw.githubusercontent.com/wy-ei/notebook/master/images/16-8-29/3537077.jpg"></div>
 
 使用 `background-blend-mode` 的效果：
 
@@ -1071,13 +1108,13 @@ filter: sepia(1) saturate(4) hue-rotate(295deg);
 
 我们常常看到毛玻璃效果，比如在 macOS 中就非常常见，启动 launchpad 就能看到这种效果。在网易云音乐中显示歌词的哪儿也使用了这种效果。说这么多不如一个例子，就下面这样的。那么在 web 上该如何实现这样的效果呢。
 
-<div class="blur-background"><img src="../images/maxresdefault.jpg" alt=""><p>即刻出发</p></div>
+<div class="blur-background"><img src="https://raw.githubusercontent.com/wy-ei/notebook/master/images/16-8-29/3537077.jpg" alt=""><p>千里之外</p></div>
 
 这里 dom 结构是这样的：
 
 ```html
 <div class="main">
-    <p class="content">即刻出发</p>
+    <p class="content">千里之外</p>
 </div>
 ```
 
@@ -1095,7 +1132,7 @@ filter: sepia(1) saturate(4) hue-rotate(295deg);
     position: absolute;
     top: 0;right: 0;bottom: 0;left: 0;
     z-index: -1;
-    background: url(../images/maxresdefault.jpg) 0 / cover;
+    background: url(images/16-8-29/3537077.jpg) 0 / cover;
     -webkit-filter: blur(5px);
     filter: blur(5px);
 }
@@ -1114,7 +1151,7 @@ filter: sepia(1) saturate(4) hue-rotate(295deg);
 .ex-br span::after{
     content:"\A";
 }
-##ex-stripe{
+#ex-stripe{
     line-height: 1.5em;
     background: linear-gradient(rgba(210, 210, 210, 0.2) 50%, transparent 0);
     background-size: auto 3em;
@@ -1328,71 +1365,71 @@ text-shadow: 0 1px hsl(0,0%,85%),
 ## CSS 揭秘 - 读书笔记（其五）
 
 <style>
-##ex-checkbox[type=checkbox]{
-    display: none;
-}
-##ex-checkbox[type=checkbox]+label{
-    display: inline-block;
-    position: relative;
-    width:80px;
-    height: 20px;
-    border-radius: 3px;
-    border: 1px solid #aaa;
-    background: #aaa;
-}
-##ex-checkbox[type=checkbox]+label::after{
-    content: '';
-    position: absolute;
-    left: 0;
-    display: inline-block;
-    width:50%;
-    height: 100%;
-    border-radius: 2px;
-    background: #fff;
-}
-##ex-checkbox[type=checkbox]:checked+label{
-    background: #39ca39;
-    border: 1px solid #39ca39;
-}
-##ex-checkbox[type=checkbox]:checked+label::after{
-    left: 50%;
-}
-##ex-item-count div,
-##ex-item-count-range div,
-##ex-items-count-even-or-odd div{
-    display: inline-block;
-    width: 30px;
-    height: 30px;
-    border-radius: 4px;
-    margin: 10px;
-}
-##ex-item-count div:only-child{
-    background: red;
-}
-##ex-item-count div:first-child:nth-last-child(2),
-##ex-item-count div:first-child:nth-last-child(2) ~ div{
-    background: yellow;
-}
-##ex-item-count div:first-child:nth-last-child(3),
-##ex-item-count div:first-child:nth-last-child(3) ~ div{
-    background: green;
-}
-##ex-item-count-range div:first-child:nth-last-child(-n+4),
-##ex-item-count-range div:first-child:nth-last-child(-n+4) ~ div{
-    background: yellow;
-}
-##ex-item-count-range div:first-child:nth-last-child(n+4),
-##ex-item-count-range div:first-child:nth-last-child(n+4) ~ div{
-    background: black;
-}
-##ex-items-count-even-or-odd div:first-child:nth-last-child(2n+1),
-##ex-items-count-even-or-odd div:first-child:nth-last-child(2n+1) ~ div{
-    background: black;
-}
-##ex-items-count-even-or-odd div:first-child:nth-last-child(2n),
-##ex-items-count-even-or-odd div:first-child:nth-last-child(2n) ~ div{
-    background: yellow;
-}
+    #ex-checkbox[type=checkbox]{
+        display: none;
+    }
+    #ex-checkbox[type=checkbox]+label{
+        display: inline-block;
+        position: relative;
+        width:80px;
+        height: 20px;
+        border-radius: 3px;
+        border: 1px solid #aaa;
+        background: #aaa;
+    }
+    #ex-checkbox[type=checkbox]+label::after{
+        content: '';
+        position: absolute;
+        left: 0;
+        display: inline-block;
+        width:50%;
+        height: 100%;
+        border-radius: 2px;
+        background: #fff;
+    }
+    #ex-checkbox[type=checkbox]:checked+label{
+        background: #39ca39;
+        border: 1px solid #39ca39;
+    }
+    #ex-checkbox[type=checkbox]:checked+label::after{
+        left: 50%;
+    }
+    #ex-item-count div,
+    #ex-item-count-range div,
+    #ex-items-count-even-or-odd div{
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        border-radius: 4px;
+        margin: 10px;
+    }
+    #ex-item-count div:only-child{
+        background: red;
+    }
+    #ex-item-count div:first-child:nth-last-child(2),
+    #ex-item-count div:first-child:nth-last-child(2) ~ div{
+        background: yellow;
+    }
+    #ex-item-count div:first-child:nth-last-child(3),
+    #ex-item-count div:first-child:nth-last-child(3) ~ div{
+        background: green;
+    }
+    #ex-item-count-range div:first-child:nth-last-child(-n+4),
+    #ex-item-count-range div:first-child:nth-last-child(-n+4) ~ div{
+        background: yellow;
+    }
+    #ex-item-count-range div:first-child:nth-last-child(n+4),
+    #ex-item-count-range div:first-child:nth-last-child(n+4) ~ div{
+        background: black;
+    }
+    #ex-items-count-even-or-odd div:first-child:nth-last-child(2n+1),
+    #ex-items-count-even-or-odd div:first-child:nth-last-child(2n+1) ~ div{
+        background: black;
+    }
+    #ex-items-count-even-or-odd div:first-child:nth-last-child(2n),
+    #ex-items-count-even-or-odd div:first-child:nth-last-child(2n) ~ div{
+        background: yellow;
+    }
 </style>
 
 

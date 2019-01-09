@@ -1,10 +1,25 @@
-# Fetch API
+## Fetch API
 
+_上次修改时间: 2016-07-21_
 
+---
 
+## 目录：
+
+- [基本用法](#基本用法)
+- [Headers 类](#headers-类)
+  - [Headers 实例的方法](#headers-实例的方法)
+- [Request 类](#request-类)
+  - [Request 实例的属性](#request-实例的属性)
+- [Response 类](#response-类)
+  - [Response 实例属性](#response-实例属性)
+- [总结](#总结)
+
+---
 
 
 Fetch API 包含一组类和方法，用来简化 HTTP 请求。其中包含以下方法和类：
+
 - fetch 方法：用于发起 HTTP 请求
 - Request 类：用来描述请求
 - Response 类：用来表示响应

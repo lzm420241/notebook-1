@@ -7,6 +7,8 @@ var path = require('path');
 
 class Formater{
     constructor(file){
+        this.file = file;
+
         this.seen_slug = {}
     
         let markdown = fs.readFileSync(file, {encoding: 'utf-8'})
@@ -20,7 +22,18 @@ class Formater{
         markdown = this.format_image(markdown);
         markdown = this.format_toc(markdown);
         markdown = this.render_math_as_img(markdown);
+        markdown = this.format_web_link(markdown);
         return markdown;
+    }
+
+    format_web_link(markdown){
+        let relative_path = path.relative(__dirname + '/..', this.file)
+        relative_path = relative_path.replace(/\\/g, '/');
+        let pattern = '[__WEB__]';
+        return markdown.replace(pattern, function(){
+
+            return `本文部分内容在 github 上无法正常显示，[可点击此处在外部网页中浏览](https://wy-ei.github.io/md/view/?url=https://raw.githubusercontent.com/wy-ei/notebook/master/${relative_path})。`
+        })
     }
 
     get_title(markdown){
@@ -36,8 +49,6 @@ class Formater{
     }
 
     slug(value) {
-        console.log(value)
-        '什么是 fps，60fps 意味着什么？'
 
         let slug = value
             .toLowerCase()
@@ -50,8 +61,8 @@ class Formater{
           var original_slug = slug;
           do {
             this.seen_slug[original_slug]++;
-            slug = original_slug + '-' + this.seen[original_slug];
-          } while (this.seen.hasOwnProperty(slug));
+            slug = original_slug + '-' + this.seen_slug[original_slug];
+          } while (this.seen_slug.hasOwnProperty(slug));
         }
         this.seen_slug[slug] = 0;
       
@@ -88,8 +99,13 @@ class Formater{
 
         let toc = '## 目录：\n\n'
         for(let h of hx){
+            let diff = h.level - topLevel;
+            if (diff > 1){
+                continue;
+            }
+
             let slug = this.slug(h.text);
-            let space = _.repeat(' ', (h.level - topLevel) * 2);
+            let space = _.repeat(' ', (diff) * 2);
             toc +=  `${space}- [${h.text}](#${slug})\n`
         }
 

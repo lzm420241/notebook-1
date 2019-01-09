@@ -1,6 +1,6 @@
 # npm script 用法详解
 
-
+_最后修改时间：2016-12-04_
 
 ## 什么是 npm script
 
@@ -177,7 +177,7 @@ console.log("This article is Awesome, isn't it?");
 多说两句，将上面的 `#!usr/bin/env node` 写入 JavaScript 文件第一行，不会报错。因为这是一个 UNIX 世界都认识的东西。通过 `chmod +x cli.js`，你可以使用 `./cli.js` 直接执行它，因为这一行已经告诉 shell 使用 node 来执行它了。
 
 
-# 总结
+## 总结
 
 早在今年 3 月，在网上看到很多帖子，涌现出一个观点，要使用 npm script 来代替 gulp 这样的构建工具，如今看到 npm script 的功能确实强大，利用 node 和 shell 我们能够写出一些很实用的脚本，来解决手头的问题，并不一定需要利用 gulp，grunt 这样的东西。据统计，在 2015 年 gulp 以绝对的优势占据着 task runner 使用率第一的位置，而在 2016 年 npm script 的使用率提升的非常快。
 
